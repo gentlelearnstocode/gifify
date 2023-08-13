@@ -1,14 +1,8 @@
 .root {
-  height: 10vh;
-  background-color: var(--white);
-}
-
-.avatarWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1vw;
+  background-color: var(--primary-400);
+  text-align: center;
+  padding: 2vh 0;
+  margin-bottom: 0;
 }
 
 .logo {
