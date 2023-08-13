@@ -9,7 +9,7 @@ const requestHandler = (config: InternalAxiosRequestConfig) => {
 axios.interceptors.request.use(requestHandler);
 
 axios.interceptors.response.use(
-  (response: AxiosResponse) => response.data,
+  (response: AxiosResponse) => response.data?.data,
   (error: AxiosError) => {
     console.log('Error: ', error);
     return Promise.reject(error);

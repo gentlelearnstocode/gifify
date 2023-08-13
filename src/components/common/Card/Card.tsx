@@ -1,32 +1,24 @@
-import { ReactElement } from 'react';
 import {
   Card as MuiCard,
   CardProps as MuiCardProps,
   CardContent,
-  CardActions,
 } from '@mui/material';
 import clsx from 'clsx';
 
 import { Text } from '../../core';
-import classes from './card.module.scss';
+import classes from './card.module.css'
 
 //Todo: review this component and make it generic
 type CardProps = {
   description?: string;
-  deleteButton: ReactElement;
-  confirmButton: ReactElement;
 } & MuiCardProps;
 
 export const Card = (props: CardProps) => {
-  const { description, children, className, deleteButton, confirmButton, ...otherProps } = props;
+  const { description, children, className, ...otherProps } = props;
   return (
     <MuiCard {...otherProps} className={clsx(classes.root, className)}>
       <Text textSize="large">{description}</Text>
       <CardContent className={classes.content}>{children}</CardContent>
-      <CardActions>
-        {confirmButton}
-        {deleteButton}
-      </CardActions>
     </MuiCard>
   );
 };

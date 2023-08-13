@@ -3,4 +3,27 @@
   padding: 5vw 10vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gifWrapper {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  gap: 2rem;
+  height: 5vh;
+}
+
+.searchInput {
+  border: 0.1rem solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2.5rem;
 }

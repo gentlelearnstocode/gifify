@@ -2,10 +2,12 @@ import { useQuery } from 'react-query';
 
 import { axios } from '../../../libs/axios';
 import { GIPHY_API_KEY, GIPHY_API_URL } from '../../../config';
+import { AxiosResponse } from 'axios';
+import { IGif } from '../interfaces/gif.interface';
 
-export const fetchTrendingGiphy = () => {
+export const fetchTrendingGiphy = (): Promise<AxiosResponse<IGif[], any>> => {
   return axios.get(
-    `https://api.giphy.com/v1/gifs/trending?api_key=TAikWbOQZkL0dyDP9944qvcdccTEi1w5&limit=1&offset=0&rating=g&bundle=messaging_non_clips
+    `${GIPHY_API_URL}/gifs/trending?api_key=${GIPHY_API_KEY}&limit=10&offset=0&rating=g&bundle=messaging_non_clips
     `,
   );
 };
