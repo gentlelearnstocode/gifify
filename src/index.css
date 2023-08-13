@@ -48,36 +48,8 @@
   --red-700: #aa3028;
   --red-800: #84251f;
   --red-900: #651d18;
-  /* warning color theme */
-  --warning-50: #fef4e6;
-  --warning-100: #fdddb3;
-  --warning-200: #fbcc8e;
-  --warning-300: #fab55a;
-  --warning-400: #f9a63a;
-  --warning-500: #f79009;
-  --warning-600: #e18308;
-  --warning-700: #af6606;
-  --warning-800: #884f05;
-  --warning-900: #683c04;
-  /* success color theme */
-  --success-50: #e7f8f0;
-  --success-100: #b6e9d1;
-  --success-200: #92deba;
-  --success-300: #60cf9b;
-  --success-400: #41c588;
-  --success-500: #12b76a;
-  --success-600: #10a760;
-  --success-700: #0d824b;
-  --success-800: #0a653a;
-  --success-900: #084d2d;
-  /* status color */
-  --status-primary: var(--primary-500);
-  --status-instock: var(--success-500);
-  --status-total-returned: #845ebc;
-  --status-total-product: #dba362;
-  --border-color: var(--gray-100);
-  --heading-color: var(--gray-800);
-  --sub-heading: var(--gray-600);
+  /* common */
+  --reactive-blue: #04d8f9;
 
   /* general font size */
   --font-small: 1rem;

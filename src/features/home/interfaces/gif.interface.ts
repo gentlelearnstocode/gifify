@@ -3,6 +3,8 @@ export interface IGif {
   title: string;
   url: string;
   images: IGifImages;
+  username: string;
+  rating: string;
 }
 
 export interface IGifImages {

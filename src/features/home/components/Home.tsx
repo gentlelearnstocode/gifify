@@ -10,22 +10,22 @@ import classes from '../styles/home.module.css';
 
 export const Home = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [selectedGif, setSelectedGif] = useState<IGif | null>(null)
+  const [selectedGif, setSelectedGif] = useState<IGif | null>(null);
 
   const { data, isSuccess, isFetching } = useTrendingGiphyQuery(searchTerm);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
 
-  const handleClickGif = (gif: IGif) => setSelectedGif(gif)
+  const handleClickGif = (gif: IGif) => setSelectedGif(gif);
 
-  const handleUnselectGif = () => setSelectedGif(null)
+  const handleUnselectGif = () => setSelectedGif(null);
 
   const render = () => {
     if (isFetching) {
       return <Spinner />;
     }
     if (isSuccess) {
-      return <GifGrid gifs={data} onClick={handleClickGif} />
+      return <GifGrid gifs={data} onClick={handleClickGif} />;
     }
   };
 
@@ -33,17 +33,17 @@ export const Home = () => {
 
   return (
     <div className={classes.container}>
-      <section className={classes.searchbar}>
-        <FieldInput
-          placeholder="Type to search your gif"
-          fontSize="medium"
-          iconright="search"
-          className={classes.searchInput}
-          onChange={handleSearch}
-        />
-      </section>
+      <FieldInput
+        placeholder="Type to search your gif"
+        fontSize="medium"
+        iconright="search"
+        className={classes.searchInput}
+        onChange={handleSearch}
+      />
       <section className={classes.gifWrapper}>{render()}</section>
-      {selectedGif && <GifDisplay gif={selectedGif} open={Boolean(selectedGif)} onClose={handleUnselectGif} />}
+      {selectedGif && (
+        <GifDisplay gif={selectedGif} open={Boolean(selectedGif)} onClose={handleUnselectGif} />
+      )}
     </div>
   );
 };
