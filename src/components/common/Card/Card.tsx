@@ -5,7 +5,7 @@ import { Text } from '../../core';
 import classes from './card.module.css';
 
 //Todo: review this component and make it generic
-type CardProps = {
+export type CardProps = {
   description?: string;
 } & MuiCardProps;
 

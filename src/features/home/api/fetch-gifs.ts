@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { enqueueSnackbar } from 'notistack';
 
 import { axios } from '../../../libs/axios';
 import { GIPHY_API_KEY, GIPHY_API_URL } from '../../../config';
@@ -25,5 +26,10 @@ export const useTrendingGiphyQuery = (searchTerm: string) => {
     queryKey: ['trendingGifs', searchTerm],
     queryFn: () => (Boolean(searchTerm) ? fetchSearchGiphy(searchTerm) : fetchTrendingGiphy()),
     refetchOnWindowFocus: false,
+    onSuccess: () => enqueueSnackbar({ variant: 'info', message: 'Gifs fetched successfully' }),
+    onError: (error) => {
+      console.log('Error:', error);
+      enqueueSnackbar({ variant: 'error', message: 'Something went wrong' });
+    },
   });
 };

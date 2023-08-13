@@ -1,34 +1,35 @@
 import { useState, ChangeEvent } from 'react';
 
-import { Button, FieldInput } from '../../../components/core';
-import { Card, Spinner } from '../../../components/common';
+import { FieldInput } from '../../../components/core';
+import { Spinner } from '../../../components/common';
 import { useTrendingGiphyQuery } from '../api/fetch-gifs';
-import classes from '../styles/home.module.css';
 import { IGif } from '../interfaces/gif.interface';
+import { GifGrid } from './GifGrid';
+import { GifDisplay } from './GifDisplay';
+import classes from '../styles/home.module.css';
 
 export const Home = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [selectedGif, setSelectedGif] = useState<IGif | null>(null)
 
-  const { data: gifs, isSuccess, isFetching } = useTrendingGiphyQuery(searchTerm);
+  const { data, isSuccess, isFetching } = useTrendingGiphyQuery(searchTerm);
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
+
+  const handleClickGif = (gif: IGif) => setSelectedGif(gif)
+
+  const handleUnselectGif = () => setSelectedGif(null)
 
   const render = () => {
     if (isFetching) {
       return <Spinner />;
     }
     if (isSuccess) {
-      return (
-        <>
-          {gifs?.map((gif: IGif, index: number) => (
-            <Card key={gif.id}>
-              <img alt={`gif-${index}`} src={gif.images.fixed_height.url} />
-            </Card>
-          ))}
-        </>
-      );
+      return <GifGrid gifs={data} onClick={handleClickGif} />
     }
   };
 
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
+  console.log('gif', data);
 
   return (
     <div className={classes.container}>
@@ -42,6 +43,7 @@ export const Home = () => {
         />
       </section>
       <section className={classes.gifWrapper}>{render()}</section>
+      {selectedGif && <GifDisplay gif={selectedGif} open={Boolean(selectedGif)} onClose={handleUnselectGif} />}
     </div>
   );
 };
