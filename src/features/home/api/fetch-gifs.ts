@@ -12,9 +12,18 @@ export const fetchTrendingGiphy = (): Promise<AxiosResponse<IGif[], any>> => {
   );
 };
 
-export const useTrendingGiphyQuery = () => {
+export const fetchSearchGiphy = (searchTerm: string): Promise<AxiosResponse<IGif[], any>> => {
+  const search = `q=${searchTerm}`;
+  return axios.get(
+    `${GIPHY_API_URL}/gifs/search?api_key=${GIPHY_API_KEY}&${search}&limit=10&offset=0&rating=g&bundle=messaging_non_clips
+    `,
+  );
+};
+
+export const useTrendingGiphyQuery = (searchTerm: string) => {
   return useQuery({
-    queryKey: ['trendingGifs'],
-    queryFn: () => fetchTrendingGiphy(),
+    queryKey: ['trendingGifs', searchTerm],
+    queryFn: () => (Boolean(searchTerm) ? fetchSearchGiphy(searchTerm) : fetchTrendingGiphy()),
+    refetchOnWindowFocus: false,
   });
 };

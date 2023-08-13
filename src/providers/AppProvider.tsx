@@ -13,9 +13,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <StyledEngineProvider injectFirst>
-        <BrowserRouter>
-          {children}
-        </BrowserRouter>
+        <BrowserRouter>{children}</BrowserRouter>
       </StyledEngineProvider>
     </QueryClientProvider>
   );

@@ -11,3 +11,11 @@
   flex-direction: row;
   width: 100%;
 }
+
+.medium {
+  font-size: 1.5rem;
+}
+
+.large {
+  font-size: 2rem;
+}
