@@ -1,7 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 
-import { FieldInput } from '../../../components/core';
-import { Spinner } from '../../../components/common';
+import { FieldInput } from '@components/core';
+import { Spinner } from '@components/common';
 import { useTrendingGiphyQuery } from '../api/fetch-gifs';
 import { IGif } from '../interfaces/gif.interface';
 import { GifGrid } from './GifGrid';

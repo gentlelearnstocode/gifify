@@ -10,7 +10,12 @@ export const GifGrid = (props: GifGridProps) => {
   return (
     <>
       {gifs?.map((gif: IGif) => (
-        <img onClick={() => onClick(gif)} key={gif.id} alt={gif.title} src={gif.images.fixed_height.url} />
+        <img
+          onClick={() => onClick(gif)}
+          key={gif.id}
+          alt={gif.title}
+          src={gif.images.fixed_height.url}
+        />
       ))}
     </>
   );

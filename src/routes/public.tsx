@@ -1,4 +1,4 @@
-import { Home } from '../features';
+import { Home } from '@features/home';
 
 export const publicRoutes = [
   {

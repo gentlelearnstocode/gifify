@@ -2,6 +2,11 @@
 
 This is the repository for Gifify app that displays trending gifs and performs gif search
 
+## Technical requirement:
+
+- Node >= 18.16.0
+- Vite >= 4.4.0
+
 ## Developed using:
 
 - Vite

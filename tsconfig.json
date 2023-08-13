@@ -21,8 +21,13 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Configure absolute path */
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/ts/components/*"]
+      "@components/*": ["src/components/*"],
+      "@features/*": ["src/features/*"],
+      "@assets/*": ["src/assets/*"],
+      "@providers/*": ["src/providers/*"],
+      "@libs/*": ["src/libs/*"]
     }
   },
   "include": ["src"],
