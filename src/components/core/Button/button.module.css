@@ -1,0 +1,58 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  width: 15vw;
+  color: var(--white);
+  font-size: 1rem;
+  text-transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+.buttonContent {
+  flex-basis: 80%;
+}
+
+
+.white {
+  background-color: var(--white);
+}
+
+.white:hover {
+  background-color: var(--white-50);
+}
+
+.primary {
+  background-color: var(--primary-500);
+}
+
+.primary:hover {
+  background-color: var(--primary-700);
+}
+
+.cancel {
+  background-color: var(--gray-500);
+}
+
+.cancel:hover {
+  background-color: var(--gray-300);
+}
+
+.warning {
+  background-color: var(--warning-500);
+}
+
+.warning:hover {
+  background-color: var(--warning-700);
+}
+
+.success {
+  background-color: var(--success-500);
+}
+
+.success:hover {
+  background-color: var(--success-700);
+}

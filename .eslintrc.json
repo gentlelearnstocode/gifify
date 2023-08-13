@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended"],
+  // "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["node_modules/*"],
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "settings": {
+        "react": {
+          "version": "detect"
+        },
+        "import/resolver": {
+          "typescript": {}
+        }
+      },
+      "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "rules": {
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": true
+          },
+          { "usePrettier": true }
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "indent": ["error", 2, { "switchCase": 1 }],
+    "max-len": [
+      "error",
+      {
+        "code": 100
+      }
+    ]
+  }
+}
