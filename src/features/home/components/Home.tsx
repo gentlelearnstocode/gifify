@@ -27,9 +27,8 @@ export const Home = () => {
     if (isSuccess) {
       return <GifGrid gifs={data} onClick={handleClickGif} />;
     }
+    return null;
   };
-
-  console.log('gif', data);
 
   return (
     <div className={classes.container}>
