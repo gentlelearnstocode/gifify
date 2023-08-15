@@ -1,7 +1,7 @@
 import { Card as MuiCard, CardProps as MuiCardProps, CardContent } from '@mui/material';
 import clsx from 'clsx';
 
-import { Text } from '@components/core';
+import { Text } from '@/components/core';
 import classes from './card.module.css';
 
 //Todo: review this component and make it generic

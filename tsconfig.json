@@ -23,11 +23,7 @@
     /* Configure absolute path */
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@features/*": ["src/features/*"],
-      "@assets/*": ["src/assets/*"],
-      "@providers/*": ["src/providers/*"],
-      "@libs/*": ["src/libs/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],

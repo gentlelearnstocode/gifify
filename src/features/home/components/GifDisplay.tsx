@@ -1,5 +1,5 @@
-import { OverlayDisplay, OverlayDisplayProps } from '@components/common';
-import { Text } from '@components/core';
+import { OverlayDisplay, OverlayDisplayProps } from '@/components/common';
+import { Text } from '@/components/core';
 import { IGif } from '../interfaces/gif.interface';
 import classes from '../styles/home.module.css';
 

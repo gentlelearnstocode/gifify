@@ -4,7 +4,7 @@ import { QueryClientProvider } from 'react-query';
 import { StyledEngineProvider } from '@mui/material';
 
 import { SnackbarProvider } from 'notistack';
-import { queryClient } from '@libs/react-query';
+import { queryClient } from '@/libs/react-query';
 
 type AppProviderProps = {
   children: ReactNode;

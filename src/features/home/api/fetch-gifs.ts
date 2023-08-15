@@ -2,10 +2,10 @@ import { useQuery } from 'react-query';
 import { enqueueSnackbar } from 'notistack';
 import { AxiosResponse } from 'axios';
 
-import { axios } from '@libs/axios';
-import { GIPHY_API_KEY, GIPHY_API_URL } from '../../../config';
+import { axios } from '@/libs/axios';
+import { GIPHY_API_KEY, GIPHY_API_URL } from '@/config';
 import { IGif } from '../interfaces/gif.interface';
-import { IPagination } from '../../../types/pagination.interface';
+import { IPagination } from '@/types/pagination.interface';
 
 export const fetchTrendingGiphy = (
   pagination?: IPagination,
