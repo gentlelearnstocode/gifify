@@ -22,7 +22,7 @@ This is the repository for Gifify app that displays trending gifs and performs g
 ## Commands
 
 - To install dependencies run: `npm install`
-- To start the app run: `npm install`
+- To start the app run: `npm start`
 
 ## Technical constraint
 
